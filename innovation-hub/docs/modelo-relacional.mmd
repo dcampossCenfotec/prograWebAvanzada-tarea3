@@ -1,0 +1,157 @@
+erDiagram
+    Users ||--o{ Sessions : sessions
+    Users ||--o{ UserSkills : profile
+    Skills ||--o{ UserSkills : skill
+    Users ||--o{ UserInterests : interests
+    Users ||--o{ Initiatives : owner
+    Categories ||--o{ Initiatives : category
+    Initiatives ||--o{ InitiativeSkills : requires
+    Skills ||--o{ InitiativeSkills : skill
+    Initiatives ||--o{ InitiativeTags : tags
+    Users {
+        int Id PK
+        uniqueidentifier PublicId UK
+        nvarchar FirstName
+        nvarchar LastName
+        nvarchar MemberType
+        nvarchar Email
+        nvarchar EmailNormalized UK
+        nvarchar PasswordHash "nullable"
+        nvarchar Career "nullable"
+        nvarchar Bio "nullable"
+        nvarchar PortfolioUrl "nullable"
+        nvarchar Availability
+        bit Active
+        datetimeoffset CreatedAt
+        datetimeoffset UpdatedAt
+    }
+    Sessions {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int UserId FK
+        varchar TokenHash UK
+        datetimeoffset CreatedAt
+        datetimeoffset ExpiresAt
+        datetimeoffset RevokedAt "nullable"
+    }
+    Categories {
+        int Id PK
+        varchar PublicId UK
+        nvarchar Name
+        nvarchar NameNormalized UK
+        bit Active
+    }
+    Skills {
+        int Id PK
+        uniqueidentifier PublicId UK
+        nvarchar Name
+        nvarchar NameNormalized UK
+        bit Active
+    }
+    UserSkills {
+        int UserId PK, FK
+        int SkillId PK, FK
+        nvarchar Level
+        int Position
+    }
+    UserInterests {
+        int UserId PK, FK
+        int Position PK
+        nvarchar Value
+        nvarchar NormalizedValue
+    }
+    Initiatives {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int OwnerId FK
+        int CategoryId FK
+        nvarchar Title
+        nvarchar Type
+        nvarchar Summary
+        nvarchar Description
+        nvarchar Problem
+        nvarchar Beneficiaries
+        int EstimatedMembers
+        nvarchar Visibility
+        nvarchar State
+        int Revision
+        datetimeoffset CreatedAt
+        datetimeoffset UpdatedAt
+    }
+    InitiativeSkills {
+        int InitiativeId PK, FK
+        int SkillId PK, FK
+        int Position
+    }
+    InitiativeTags {
+        int InitiativeId PK, FK
+        int Position PK
+        nvarchar Value
+        nvarchar NormalizedValue
+    }
+    Initiatives ||--o{ ParticipationRequests : recibe
+    Users ||--o{ ParticipationRequests : applies
+    Skills ||--o{ ParticipationRequests : offers
+    Initiatives ||--o{ Memberships : team
+    Users ||--o{ Memberships : participates
+    ParticipationRequests |o--o| Memberships : source_period
+    Memberships ||--o{ MembershipEvents : history
+    Users ||--o{ MembershipEvents : actor
+    ParticipationRequests |o--o{ MembershipEvents : reference
+    Initiatives ||--o| Projects : source
+    Projects ||--o{ ProjectTechnologies : technologies
+    ParticipationRequests {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int InitiativeId FK
+        int ApplicantId FK
+        int OfferedSkillId FK
+        nvarchar Message
+        nvarchar Role
+        nvarchar Availability
+        nvarchar State
+        nvarchar DecisionComment "nullable"
+        datetimeoffset CreatedAt
+        datetimeoffset UpdatedAt
+        datetimeoffset DecidedAt "nullable"
+    }
+    Memberships {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int InitiativeId FK
+        int UserId FK
+        int SourceRequestId FK "nullable composite FK"
+        nvarchar Role
+        nvarchar State
+        datetimeoffset JoinedAt
+        datetimeoffset RetiredAt "nullable"
+    }
+    MembershipEvents {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int MembershipId FK
+        int ActorId FK
+        int RequestId FK "nullable"
+        nvarchar Type
+        datetimeoffset OccurredAt
+    }
+    Projects {
+        int Id PK
+        uniqueidentifier PublicId UK
+        int SourceInitiativeId FK, UK
+        nvarchar Name
+        nvarchar Description
+        nvarchar Objective
+        nvarchar State
+        date StartDate
+        date EstimatedEndDate "nullable"
+        nvarchar RepositoryUrl "nullable"
+        datetimeoffset CreatedAt
+        datetimeoffset UpdatedAt
+    }
+    ProjectTechnologies {
+        int ProjectId PK, FK
+        int Position PK
+        nvarchar Value
+        nvarchar NormalizedValue
+    }

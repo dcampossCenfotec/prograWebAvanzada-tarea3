@@ -1,0 +1,673 @@
+PÁGINA 1
+ 
+ 
+1 
+ 
+ 
+ 
+Universidad CENFOTEC 
+ 
+Escuela de Software 
+Código del curso: SOFT-12 
+Nombre del curso: Programación Web Avanzada 
+Sección: SCV2   Periodo: III cuatrimestre 2026 
+Docente facilitador: Álvaro Cordero Peña 
+ 
+CONSIGNA DE LA TAREA 3 
+Del documento a la tabla — laboratorios del Maratón de series y modelo relacional del 
+Innovation Hub 
+1. Datos generales de la actividad 
+Tipo de actividad: Tarea 
+ 
+ 
+2. Instrucciones generales (estas instrucciones pueden ser adaptadas según las 
+especificaciones del curso o de la actividad) 
+1. Lea cuidadosamente las instrucciones de la actividad, en caso de tener alguna duda 
+puede consultar con el docente.  
+2. Esta actividad se desarrolla de manera individual o grupal (de acuerdo a lo 
+especificado en los datos generales), cualquier intento de plagio será sancionado de 
+acuerdo con el reglamento académico vigente. 
+3. Al completar la actividad, debe subir la solución en la plataforma Moodle en el formato, 
+tiempo y espacio indicado por el docente.  
+ 
+Fecha de entrega: 
+Domingo 22 de 
+noviembre de 2026, 
+11:55 p. m. 
+Valor porcentual: 10 % 
+Formato de entrega: 
+Archivo de texto (.txt) 
+con los enlaces a los dos 
+repositorios de GitHub, 
+etiquetados como tarea-
+3 
+Puntaje total: 
+32 pts 
+producto + 12 
+pts defensa 
+(50 % / 50 %) 
+Individual:   ____ Grupal:   ____   
+PÁGINA 2
+ 
+ 
+2 
+ 
+3. Objetivos o competencias del curso que se evaluarán en la actividad de 
+aprendizaje 
+Objetivo general o 
+competencia del curso 
+Desarrollar aplicaciones web completas mediante 
+tecnologías de cliente y de servidor, integrando la interfaz, 
+la lógica de la aplicación y la persistencia de datos en una 
+solución funcional. 
+Objetivos específicos o 
+resultados de aprendizaje que 
+se evalúan 
+● Desarrollar aplicaciones de cliente mediante un 
+marco de trabajo de JavaScript, gestionando 
+componentes, estado, navegación y consumo de 
+servicios. 
+● Modelar y persistir la información de un dominio en 
+una base de datos relacional mediante una 
+herramienta de mapeo objeto-relacional. 
+ 
+4. Descripción de la actividad 
+Contexto: 
+La Tarea 3 cierra el bloque de React y abre el bloque de .NET. Integra los laboratorios 
+guiados del Maratón de series (componentes, estado, formularios, consumo del API, 
+React Router) y los contenidos de la semana 11: SQL Server, modelo relacional y 
+Entity Framework Core. 
+La tarea tiene dos partes. La Parte A reúne en un repositorio personal todos los 
+laboratorios guiados realizados en el curso, funcionando. La Parte B es el diseño del 
+servidor .NET de la entrega final del proyecto: el dominio del Innovation Hub, 
+modelado en documentos durante el Avance 2, se diseña ahora en tablas de SQL 
+Server para implementarlo después con Entity Framework Core. 
+El alcance está acotado a propósito. La Parte B es de diseño: no se programa en C# 
+ni hace falta instalar SQL Server. Se entregan documentos: el diagrama de la base 
+de datos, la descripción de cada tabla, datos de prueba, consultas SQL escritas y el 
+diseño de dos rutas de lectura. En la entrega final, ese diseño se convierte en código 
+con Entity Framework Core. 
+ 
+Instrucciones: 
+1. Parte A — Laboratorios guiados del Maratón de series (individual) 
+1.1 Laboratorios incluidos 
+Se entregan completos los laboratorios guiados de React realizados en el curso y los 
+dos laboratorios nuevos de la semana 11: 
+PÁGINA 3
+ 
+ 
+3 
+ 
+● Proyectos base: conceptos de React; props, children, eventos y useState. 
+● Maratón de series con React: montaje del proyecto, armar el tablero 
+(componentes), useState, ¿por qué no basta una variable?, filtros y resumen, 
+y formulario. 
+● Maratón de series conectado al API: React y el API, React lee el API, el 
+formulario crea con POST, y cambiar estado y quitar desde React. 
+● Nuevos: React Router (varias páginas, detalle con :id, filtros en la dirección) y 
+EF Core y SQL Server (el Maratón en tablas con migraciones y dos rutas 
+GET). 
+1.2 Requisitos 
+● El Maratón se entrega en su estado final: el cliente React con React Router, el 
+servidor Express con MongoDB y el servidor .NET del último laboratorio 
+(servidor-net). Como los laboratorios son acumulativos, ese estado contiene el 
+trabajo de todos los anteriores. 
+● Toda la funcionalidad opera con el servidor Express: listar, filtrar desde la 
+dirección, ver el detalle, agregar, cambiar estado y quitar series. En servidor-
+net, GET /api/miembros y GET /api/series responden el mismo JSON que 
+Express. 
+● El archivo docs/laboratorios.md tiene una sección por laboratorio con: una 
+captura del resultado esperado, la tabla «Explique el recorrido» completada y 
+las respuestas del recuadro «Reflexiona», cuando el laboratorio los incluye. 
+● En la misma sección se indica qué experimentos del laboratorio se realizaron 
+y qué se observó en cada uno. 
+2. Parte B — Diseño de la base de datos del Innovation Hub (repositorio 
+del proyecto) 
+La Parte B se hace en equipo, en la carpeta docs del repositorio del proyecto. Es un 
+trabajo de diseño: no se programa ni se ejecuta nada. El objetivo es pasar el modelo 
+de MongoDB del Avance 2 a tablas de SQL Server, para que en la entrega final solo 
+haya que convertirlo en código. 
+2.1 Diagrama y relaciones 
+En docs/modelo-datos.md, sección «Diagrama»: 
+● Un diagrama entidad-relación con todas las tablas, su llave primaria y sus 
+llaves foráneas. Puede hacerse con Mermaid, draw.io o una herramienta 
+equivalente. 
+● Para cada una de estas relaciones, una línea que diga su tipo (1 a muchos o 
+muchos a muchos) y cómo se resuelve: usuario–competencia, usuario–
+iniciativa, iniciativa–competencia, iniciativa–solicitud, proyecto–usuario y 
+proyecto–iniciativa. Una relación 1 a muchos se resuelve con una llave foránea; 
+una muchos a muchos, con una tabla intermedia. 
+PÁGINA 4
+ 
+ 
+4 
+ 
+● Una tabla «Del documento a la tabla»: para cada colección y cada arreglo del 
+modelo del Avance 2, en qué tabla quedó y por qué. 
+2.2 Descripción de cada tabla 
+En docs/modelo-datos.md, sección «Tablas»: una tabla por cada tabla de la base, 
+con estas columnas. Ejemplo con la tabla Usuarios: 
+Columna  | Tipo          | ¿Obligatoria? | Llave    | Regla 
+Id       | INT IDENTITY  | Sí            | Primaria | 
+Nombre   | NVARCHAR(80)  | Sí            |          | 
+Correo   | NVARCHAR(120) | Sí            |          | UNIQUE (no se repite) 
+Carrera  | NVARCHAR(60)  | No            |          | 
+En las tablas que apuntan a otra, la columna de la llave foránea indica a qué tabla 
+apunta (por ejemplo, PropietarioId → Usuarios) y qué pasa si se intenta borrar el 
+registro al que apunta: se impide, se borra también o queda vacío. 
+2.3 Plan de migración de MongoDB a SQL Server 
+En docs/modelo-datos.md, sección «Plan de migración»: los pasos para pasar los 
+datos del Innovation Hub de MongoDB a SQL Server, en orden. Para cada paso se 
+entrega lo que se indica: 
+● Paso 1 — Inventario. La lista de colecciones del Avance 2 con sus campos, 
+indicando cuáles son arreglos embebidos y cuáles son referencias a otra 
+colección. 
+● Paso 2 — Correspondencia. Para cada colección, la tabla a la que pasa; para 
+cada arreglo, la tabla hija o intermedia que lo reemplaza; para cada referencia, 
+la llave foránea. Es la tabla «Del documento a la tabla» de la sección 2.1. 
+● Paso 3 — Orden de creación de las tablas. Primero las que no apuntan a 
+ninguna otra; después las que dependen de ellas. No se puede crear una llave 
+foránea hacia una tabla que todavía no existe. Ejemplo: 
+1. Usuarios, Competencias              (no dependen de nadie) 
+2. UsuarioCompetencias, Iniciativas    (apuntan a Usuarios y Competencias) 
+3. IniciativaCompetencias, Equipos     (apuntan a Iniciativas) 
+4. Solicitudes, Proyectos              (apuntan a Iniciativas y Usuarios) 
+● Paso 4 — Identificadores. En MongoDB cada documento tiene un _id 
+ObjectId; en SQL Server cada fila tendrá un Id numérico. Explique cómo se 
+mantienen las referencias al cambiar de uno a otro, por ejemplo con una tabla 
+de equivalencias _id → Id. 
+● Paso 5 — Carga de datos. Los datos de prueba, escritos como tablas y en el 
+mismo orden del paso 3: al menos 3 usuarios, 5 competencias, 3 iniciativas 
+con distintos niveles de visibilidad, 2 solicitudes y 1 proyecto, con sus 
+relaciones (qué competencias tiene cada usuario, cuáles requiere cada 
+iniciativa, quién está en cada equipo). 
+● Paso 6 — Verificación. Cómo se comprueba que no se perdió nada: por 
+ejemplo, contar las filas de cada tabla y compararlas con los documentos de 
+cada colección. 
+PÁGINA 5
+ 
+ 
+5 
+ 
+2.4 Consultas SQL 
+En docs/consultas.sql: al menos cinco consultas escritas a mano, cada una con un 
+comentario que diga qué hace y qué resultado debería dar con los datos de prueba. 
+No es obligatorio ejecutarlas. 
+● Un JOIN entre dos tablas relacionadas 1 a muchos. Ejemplo: las iniciativas con 
+el nombre de su propietario. 
+● Un JOIN que recorra una relación muchos a muchos. Ejemplo: las 
+competencias que requiere cada iniciativa. 
+● Un conteo con GROUP BY. Ejemplo: cuántas solicitudes tiene cada iniciativa. 
+● Un UPDATE y un DELETE, con su WHERE. 
+● Un INSERT que la base debería rechazar por una llave o una restricción, y por 
+qué. 
+2.5 Diseño de dos rutas de lectura 
+En docs/rutas.md: escoja dos rutas GET del contrato del Avance 2 que no requieran 
+iniciar sesión; al menos una debe mostrar datos de una relación muchos a muchos. 
+Para cada ruta, entregue: 
+● La ruta y qué devuelve. Ejemplo: GET /api/initiatives/{id}, el detalle de una 
+iniciativa. 
+● Las tablas que necesita leer y la consulta SQL que obtiene esos datos. 
+● El JSON que respondería, armado con los datos de prueba, con los mismos 
+nombres de campo que responde hoy el servidor Express y los identificadores 
+como texto. 
+3. Investigación breve sobre EF Core (repositorio del proyecto) 
+El archivo docs/investigacion-efcore.md (dos páginas como máximo) responde tres 
+preguntas con base en la documentación oficial (learn.microsoft.com/ef/core) y con 
+ejemplos tomados del propio diseño. Estos temas se aplican en la entrega final y 
+forman parte de la segunda infografía. 
+● Datos relacionados: explique la diferencia entre la proyección con Select y la 
+carga con Include, cuándo conviene cada forma y qué papel cumple 
+AsNoTracking, usando una de sus dos rutas diseñadas como ejemplo. 
+● Muchos a muchos con datos propios: explique cuándo basta una tabla 
+intermedia sin clase y cuándo hace falta una entidad intermedia, con el caso 
+concreto de su modelo. 
+● Paginación en la base: explique qué hacen Skip y Take, qué SQL generan 
+según la documentación (OFFSET y FETCH) y por qué no se debe paginar en 
+memoria. 
+PÁGINA 6
+ 
+ 
+6 
+ 
+4. Estructura de los repositorios 
+Repositorio personal (Parte A): 
+tarea-3/ 
+├── README.md 
+├── .gitignore 
+├── docs/ 
+│   ├── laboratorios.md 
+│   └── capturas/ 
+├── proyectos-base/ 
+└── maraton-series/ 
+    ├── cliente/          (React con React Router) 
+    ├── servidor/         (Express + MongoDB) 
+    └── servidor-net/     (ASP.NET Core + EF Core) 
+Repositorio del proyecto (Parte B), en el commit etiquetado tarea-3: 
+innovation-hub/ 
+├── README.md 
+└── docs/ 
+    ├── modelo-datos.md          (diagrama, tablas y datos de prueba) 
+    ├── consultas.sql 
+    ├── rutas.md 
+    └── investigacion-efcore.md 
+5. Condiciones de entrega 
+● Se sube a Moodle un archivo de texto con los dos enlaces: el repositorio 
+personal y el repositorio del proyecto. 
+● Los dos repositorios deben tener la etiqueta tarea-3 apuntando al commit 
+entregado. 
+● El historial del repositorio personal debe contener al menos diez commits con 
+mensajes descriptivos. En el repositorio del proyecto, cada integrante del 
+equipo debe tener commits en la documentación del diseño. 
+● El README del repositorio personal explica cómo ejecutar los tres servidores 
+y el cliente del Maratón. El README del proyecto enlaza los documentos del 
+diseño. 
+● No se incorporan a los repositorios node_modules, bin, obj, archivos .env ni 
+secretos. Se incluyen los .env.example necesarios. 
+6. Defensa de la tarea 
+Posterior a la entrega, cada estudiante realiza una defensa oral individual en la fecha 
+y el horario que asigne el docente. Al iniciar la sesión, el Maratón (cliente, servidor 
+Express y servidor .NET) debe estar ejecutándose en el equipo del estudiante. 
+Durante la defensa el estudiante deberá: 
+● Explicar los fragmentos de código que el docente seleccione, incluido el 
+recorrido completo de una petición en el Maratón, desde el clic en React hasta 
+MongoDB y de vuelta, y explicar el diseño del proyecto: cómo una de sus rutas 
+diseñadas recorre las tablas para construir la respuesta. 
+PÁGINA 7
+ 
+ 
+7 
+ 
+● Responder preguntas sobre los criterios técnicos de la rúbrica, mostrando en 
+su código y en su diseño dónde y cómo los resolvió. 
+● Realizar modificaciones en caliente, por ejemplo: agregar una columna o una 
+restricción al diseño, resolver una relación nueva, escribir una consulta SQL 
+sobre su modelo, mostrar un dato más en el detalle de React o agregar un filtro 
+en la dirección. Las modificaciones se realizan en una rama aparte y no alteran 
+la entrega. 
+Uso de inteligencia artificial: El estudiante es responsable de todo el código 
+entregado, con independencia de las herramientas utilizadas para producirlo. La 
+defensa se realiza sin asistentes de inteligencia artificial ni herramientas de 
+generación o autocompletado de código (por ejemplo, ChatGPT, Claude, Copilot o 
+Cursor), las cuales deben estar desactivadas en el editor. Solo se permite consultar 
+la documentación oficial de las tecnologías del curso. El uso de estas herramientas 
+durante la defensa implica la calificación Deficiente en los criterios 9 al 11. 
+Ajuste por defensa: Si durante la defensa el estudiante no logra explicar el trabajo 
+correspondiente a alguno de los criterios 1 al 8, la calificación de ese criterio se ajusta 
+al nivel de dominio demostrado en la defensa. El código o el diseño que el estudiante 
+no pueda explicar ni modificar se considera no desarrollado por él; si hay indicios de 
+plagio, se procede según el reglamento académico vigente. La inasistencia 
+injustificada a la defensa se califica con el nivel Deficiente en los criterios 9 al 11. 
+ 
+5. Rúbrica 
+Esta actividad de aprendizaje será evaluada mediante la siguiente rúbrica de competencias: 
+ 
+Criterios de 
+desempeño 
+Deficiente 
+(2.00 puntos) 
+Regular 
+(2.85 puntos) 
+Bueno 
+(3.50 puntos) 
+Excelente 
+(4.00 puntos) 
+1. Laboratorios 
+guiados del 
+Maratón de series 
+(Parte A) 
+Faltan varios 
+laboratorios o el 
+Maratón no se 
+ejecuta. 
+El Maratón se 
+ejecuta, pero faltan 
+los laboratorios 
+nuevos (React 
+Router o EF Core) o 
+varias funciones no 
+operan, y 
+docs/laboratorios.md 
+está incompleto. 
+Están todos los 
+laboratorios y el 
+Maratón funciona, 
+con algún laboratorio 
+sin evidencia, sin su 
+recorrido o sin sus 
+respuestas. 
+Todos los 
+laboratorios, 
+incluidos React 
+Router y EF Core, 
+están completos y 
+funcionando, y 
+docs/laboratorios.md 
+documenta cada uno 
+con captura, 
+recorrido, respuestas 
+y experimentos. 
+2. Diagrama y 
+relaciones (Parte 
+B) 
+No hay diagrama o 
+se limita a copiar las 
+colecciones del 
+Avance 2. 
+Hay diagrama, pero 
+faltan relaciones 
+requeridas o no se 
+indica cómo se 
+resuelven. 
+El diagrama cubre 
+las relaciones 
+requeridas, con 
+alguna relación mal 
+resuelta o la tabla 
+«Del documento a la 
+tabla» incompleta. 
+El diagrama muestra 
+todas las tablas y 
+llaves, cada relación 
+requerida está bien 
+resuelta (llave 
+foránea o tabla 
+intermedia) y la tabla 
+«Del documento a la 
+PÁGINA 8
+ 
+ 
+8 
+ 
+Criterios de 
+desempeño 
+Deficiente 
+(2.00 puntos) 
+Regular 
+(2.85 puntos) 
+Bueno 
+(3.50 puntos) 
+Excelente 
+(4.00 puntos) 
+tabla» justifica cada 
+cambio. 
+3. Descripción de 
+cada tabla (Parte 
+B) 
+No se describen las 
+tablas. 
+Se listan columnas 
+sin tipos, sin 
+obligatoriedad o sin 
+llaves. 
+Todas las tablas 
+tienen columnas, 
+tipos, obligatoriedad 
+y llaves, con alguna 
+regla o 
+comportamiento al 
+borrar sin indicar. 
+Todas las tablas 
+indican columnas, 
+tipos, obligatoriedad, 
+llaves, las reglas 
+UNIQUE o CHECK 
+ligadas a las reglas 
+de negocio y qué 
+pasa al borrar. 
+4. Plan de 
+migración de 
+MongoDB a SQL 
+Server (Parte B) 
+No hay plan de 
+migración o no hay 
+datos de prueba. 
+Faltan varios pasos, 
+el orden de creación 
+no respeta las llaves 
+o los datos no 
+alcanzan los 
+mínimos. 
+Están los seis pasos, 
+con algún paso poco 
+desarrollado o 
+alguna relación sin 
+datos. 
+Los seis pasos están 
+completos: el orden 
+respeta todas las 
+dependencias, se 
+explica cómo se 
+conservan las 
+referencias al 
+cambiar los 
+identificadores, y los 
+datos de prueba 
+cubren todas las 
+relaciones. 
+5. Consultas SQL 
+(Parte B) 
+No hay consultas o 
+no corresponden al 
+modelo. 
+Faltan varias 
+consultas o tienen 
+errores de sintaxis 
+importantes. 
+Están las cinco 
+consultas, con algún 
+resultado esperado 
+sin indicar o un error 
+menor. 
+Las cinco consultas 
+son correctas, están 
+comentadas e 
+indican su resultado 
+esperado con los 
+datos de prueba. 
+6. Diseño de las 
+rutas de lectura 
+(Parte B) 
+No hay rutas 
+diseñadas. 
+Las rutas no indican 
+tablas o consulta, o 
+el JSON no 
+corresponde al 
+contrato. 
+Las dos rutas 
+indican tablas, 
+consulta y JSON, 
+con alguna 
+diferencia con el 
+contrato o sin datos 
+muchos a muchos. 
+Las dos rutas 
+indican tablas, 
+consulta SQL y el 
+JSON exacto del 
+contrato con los 
+datos de prueba, y 
+una muestra una 
+relación muchos a 
+muchos. 
+7. Investigación 
+sobre EF Core 
+No se entrega o 
+copia definiciones 
+sin relación con el 
+proyecto. 
+Responde de forma 
+general, sin 
+relacionarlo con su 
+diseño. 
+Responde las tres 
+preguntas con 
+ejemplos de su 
+diseño, con alguna 
+conclusión imprecisa 
+o sin fuentes. 
+Responde las tres 
+preguntas con 
+ejemplos de su 
+diseño, conclusiones 
+correctas sobre 
+proyección, Include, 
+AsNoTracking, 
+entidad intermedia y 
+paginación, y 
+fuentes oficiales. 
+8. Repositorios, 
+documentación e 
+historial 
+Falta un repositorio o 
+la etiqueta, o hay 
+secretos, 
+Los README están 
+incompletos o el 
+historial concentra el 
+Los repositorios 
+están documentados 
+y etiquetados, con 
+Ambos repositorios 
+tienen la etiqueta 
+tarea-3, README 
+PÁGINA 9
+ 
+ 
+9 
+ 
+Criterios de 
+desempeño 
+Deficiente 
+(2.00 puntos) 
+Regular 
+(2.85 puntos) 
+Bueno 
+(3.50 puntos) 
+Excelente 
+(4.00 puntos) 
+node_modules, bin u 
+obj en el repositorio. 
+trabajo en pocos 
+días. 
+historial poco 
+descriptivo o algún 
+paso faltante en un 
+README. 
+completos, historial 
+progresivo y 
+descriptivo con 
+commits de cada 
+integrante en el 
+diseño, y ningún 
+archivo que no deba 
+versionarse. 
+Defensa de la tarea (individual) 
+9. Explicación 
+detallada del 
+código y del 
+diseño 
+No logra explicar el 
+código ni el diseño 
+entregados. 
+Explica partes 
+aisladas, pero no 
+logra seguir el 
+recorrido de una 
+petición ni justificar 
+el diseño. 
+Recorre una petición 
+del Maratón y 
+explica una ruta 
+diseñada sobre las 
+tablas, con 
+imprecisiones 
+puntuales. 
+Explica en detalle 
+cualquier fragmento 
+señalado, recorre la 
+petición del Maratón 
+y explica cómo una 
+ruta diseñada 
+recorre las tablas, 
+relacionando cada 
+pieza con el requisito 
+que atiende. 
+10. Dominio de 
+los criterios 
+técnicos 
+evaluados 
+No responde las 
+preguntas o sus 
+respuestas 
+contradicen lo 
+entregado. 
+Responde con 
+conceptos 
+generales, sin 
+conectarlos con su 
+código ni con su 
+diseño. 
+Responde la 
+mayoría de las 
+preguntas 
+apoyándose en su 
+código y su diseño, 
+con vacíos en algún 
+tema. 
+Responde con 
+precisión sobre 
+estado y efectos, 
+React Router, llaves 
+y relaciones, 
+restricciones y 
+consultas SQL, y 
+muestra dónde lo 
+resolvió. 
+11. 
+Modificaciones 
+en caliente 
+No logra realizar la 
+modificación o la 
+aplicación deja de 
+funcionar. 
+Realiza la 
+modificación con 
+ayuda sustancial del 
+docente, o rompe 
+otra funcionalidad. 
+Implementa la 
+modificación en el 
+tiempo asignado, 
+con alguna 
+deficiencia en el 
+diseño o en la 
+ubicación del 
+cambio. 
+Ubica con rapidez 
+dónde intervenir, 
+ajusta el diseño o el 
+código de forma 
+coherente (llaves, 
+restricciones, 
+consultas, contrato) 
+y lo justifica sin 
+romper otras 
+funciones. 
+La rúbrica contiene 11 criterios, cada uno evaluado sobre un máximo de 4 puntos. 
+Los criterios 1 al 8 evalúan el producto entregado (máximo 32 puntos) y los criterios 
+9 al 11 evalúan la defensa individual de la tarea (máximo 12 puntos). Cada 
+componente aporta el 50 % de la nota. Además, según el ajuste por defensa de la 
+sección 6, los criterios del producto que el estudiante no logre explicar se califican al 
+nivel demostrado en la defensa. 
+La nota base cien se obtiene mediante las siguientes fórmulas: 
+Nota del producto = promedio de los criterios 1 al 8 (sobre 4) 
+Nota de la defensa = promedio de los criterios 9 al 11 (sobre 4) 
+PÁGINA 10
+ 
+ 
+10 
+ 
+Nota base 100 = [(Nota del producto × 0,5) + (Nota de la defensa × 0,5)] ÷ 4 × 
+100 
