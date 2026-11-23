@@ -1,0 +1,44 @@
+[
+  {
+    "UserId": 1,
+    "Position": 0,
+    "Value": "educación",
+    "NormalizedValue": "educación"
+  },
+  {
+    "UserId": 1,
+    "Position": 1,
+    "Value": "sostenibilidad",
+    "NormalizedValue": "sostenibilidad"
+  },
+  {
+    "UserId": 2,
+    "Position": 0,
+    "Value": "accesibilidad",
+    "NormalizedValue": "accesibilidad"
+  },
+  {
+    "UserId": 2,
+    "Position": 1,
+    "Value": "comunidad",
+    "NormalizedValue": "comunidad"
+  },
+  {
+    "UserId": 3,
+    "Position": 0,
+    "Value": "investigación",
+    "NormalizedValue": "investigación"
+  },
+  {
+    "UserId": 5,
+    "Position": 0,
+    "Value": "logística",
+    "NormalizedValue": "logística"
+  },
+  {
+    "UserId": 5,
+    "Position": 1,
+    "Value": "impacto social",
+    "NormalizedValue": "impacto social"
+  }
+]

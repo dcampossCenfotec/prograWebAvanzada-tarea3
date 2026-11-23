@@ -1,0 +1,134 @@
+[
+  {
+    "Id": 1,
+    "PublicId": "30000000-0000-4000-8000-000000000001",
+    "InitiativeId": 1,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-20T14:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 2,
+    "PublicId": "30000000-0000-4000-8000-000000000002",
+    "InitiativeId": 2,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-20T15:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 3,
+    "PublicId": "30000000-0000-4000-8000-000000000003",
+    "InitiativeId": 3,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-20T16:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 4,
+    "PublicId": "30000000-0000-4000-8000-000000000004",
+    "InitiativeId": 4,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-21T14:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 5,
+    "PublicId": "30000000-0000-4000-8000-000000000005",
+    "InitiativeId": 5,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-21T15:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 6,
+    "PublicId": "30000000-0000-4000-8000-000000000006",
+    "InitiativeId": 6,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-22T14:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 7,
+    "PublicId": "30000000-0000-4000-8000-000000000007",
+    "InitiativeId": 7,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-22T15:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 8,
+    "PublicId": "30000000-0000-4000-8000-000000000008",
+    "InitiativeId": 8,
+    "UserId": 1,
+    "Role": "Propietaria",
+    "State": "active",
+    "JoinedAt": "2026-10-23T14:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 9,
+    "PublicId": "30000000-0000-4000-8000-000000000009",
+    "InitiativeId": 2,
+    "UserId": 5,
+    "Role": "Coordinación logística",
+    "State": "active",
+    "JoinedAt": "2026-10-22T10:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": 1
+  },
+  {
+    "Id": 10,
+    "PublicId": "30000000-0000-4000-8000-000000000010",
+    "InitiativeId": 8,
+    "UserId": 5,
+    "Role": "Coordinación de talleres",
+    "State": "active",
+    "JoinedAt": "2026-10-24T10:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": null
+  },
+  {
+    "Id": 11,
+    "PublicId": "30000000-0000-4000-8000-000000000011",
+    "InitiativeId": 8,
+    "UserId": 3,
+    "Role": "Mentoría de entrevistas",
+    "State": "active",
+    "JoinedAt": "2026-10-26T11:00:00.000Z",
+    "RetiredAt": null,
+    "SourceRequestId": 5
+  },
+  {
+    "Id": 12,
+    "PublicId": "30000000-0000-4000-8000-000000000012",
+    "InitiativeId": 8,
+    "UserId": 2,
+    "Role": "Investigación laboral",
+    "State": "retired",
+    "JoinedAt": "2026-10-24T12:00:00.000Z",
+    "RetiredAt": "2026-10-27T12:00:00.000Z",
+    "SourceRequestId": null
+  }
+]

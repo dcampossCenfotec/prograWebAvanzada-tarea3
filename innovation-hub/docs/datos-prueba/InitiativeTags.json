@@ -1,0 +1,80 @@
+[
+  {
+    "InitiativeId": 1,
+    "Position": 0,
+    "Value": "sostenibilidad",
+    "NormalizedValue": "sostenibilidad"
+  },
+  {
+    "InitiativeId": 1,
+    "Position": 1,
+    "Value": "escuelas",
+    "NormalizedValue": "escuelas"
+  },
+  {
+    "InitiativeId": 2,
+    "Position": 0,
+    "Value": "accesibilidad",
+    "NormalizedValue": "accesibilidad"
+  },
+  {
+    "InitiativeId": 2,
+    "Position": 1,
+    "Value": "mapa",
+    "NormalizedValue": "mapa"
+  },
+  {
+    "InitiativeId": 3,
+    "Position": 0,
+    "Value": "reciclaje",
+    "NormalizedValue": "reciclaje"
+  },
+  {
+    "InitiativeId": 4,
+    "Position": 0,
+    "Value": "mentoría",
+    "NormalizedValue": "mentoria"
+  },
+  {
+    "InitiativeId": 5,
+    "Position": 0,
+    "Value": "alimentos",
+    "NormalizedValue": "alimentos"
+  },
+  {
+    "InitiativeId": 5,
+    "Position": 1,
+    "Value": "donaciones",
+    "NormalizedValue": "donaciones"
+  },
+  {
+    "InitiativeId": 6,
+    "Position": 0,
+    "Value": "datos",
+    "NormalizedValue": "datos"
+  },
+  {
+    "InitiativeId": 6,
+    "Position": 1,
+    "Value": "ambiente",
+    "NormalizedValue": "ambiente"
+  },
+  {
+    "InitiativeId": 7,
+    "Position": 0,
+    "Value": "lectura",
+    "NormalizedValue": "lectura"
+  },
+  {
+    "InitiativeId": 8,
+    "Position": 0,
+    "Value": "empleo",
+    "NormalizedValue": "empleo"
+  },
+  {
+    "InitiativeId": 8,
+    "Position": 1,
+    "Value": "entrevistas",
+    "NormalizedValue": "entrevistas"
+  }
+]

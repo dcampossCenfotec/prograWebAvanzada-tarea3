@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "PublicId": "50000000-0000-4000-8000-000000000001",
+    "SourceInitiativeId": 8,
+    "Name": "Programa de orientación laboral",
+    "Description": "Implementación de talleres y recursos para preparar postulaciones y entrevistas.",
+    "Objective": "Acompañar a participantes durante la preparación de su búsqueda laboral.",
+    "StartDate": "2026-11-01",
+    "EstimatedEndDate": "2027-02-28",
+    "State": "planning",
+    "RepositoryUrl": null,
+    "CreatedAt": "2026-10-25T16:00:00.000Z",
+    "UpdatedAt": "2026-10-25T16:00:00.000Z"
+  }
+]

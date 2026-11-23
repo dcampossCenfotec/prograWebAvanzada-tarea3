@@ -1,0 +1,58 @@
+[
+  {
+    "Id": 1,
+    "PublicId": "technology",
+    "Name": "Tecnología",
+    "NameNormalized": "tecnologia",
+    "Active": true
+  },
+  {
+    "Id": 2,
+    "PublicId": "education",
+    "Name": "Educación",
+    "NameNormalized": "educacion",
+    "Active": true
+  },
+  {
+    "Id": 3,
+    "PublicId": "sustainability",
+    "Name": "Sostenibilidad",
+    "NameNormalized": "sostenibilidad",
+    "Active": true
+  },
+  {
+    "Id": 4,
+    "PublicId": "social-impact",
+    "Name": "Impacto social",
+    "NameNormalized": "impacto social",
+    "Active": true
+  },
+  {
+    "Id": 5,
+    "PublicId": "business",
+    "Name": "Negocios y emprendimiento",
+    "NameNormalized": "negocios y emprendimiento",
+    "Active": true
+  },
+  {
+    "Id": 6,
+    "PublicId": "health",
+    "Name": "Salud y bienestar",
+    "NameNormalized": "salud y bienestar",
+    "Active": true
+  },
+  {
+    "Id": 7,
+    "PublicId": "culture-creativity",
+    "Name": "Cultura y creatividad",
+    "NameNormalized": "cultura y creatividad",
+    "Active": true
+  },
+  {
+    "Id": 8,
+    "PublicId": "other",
+    "Name": "Otro",
+    "NameNormalized": "otro",
+    "Active": true
+  }
+]

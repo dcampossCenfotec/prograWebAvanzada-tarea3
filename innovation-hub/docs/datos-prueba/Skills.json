@@ -1,0 +1,72 @@
+[
+  {
+    "Id": 1,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+    "Name": "Desarrollo web",
+    "NameNormalized": "desarrollo web",
+    "Active": true
+  },
+  {
+    "Id": 2,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa2",
+    "Name": "Diseño",
+    "NameNormalized": "diseno",
+    "Active": true
+  },
+  {
+    "Id": 3,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa3",
+    "Name": "Investigación",
+    "NameNormalized": "investigacion",
+    "Active": true
+  },
+  {
+    "Id": 4,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa4",
+    "Name": "Comunicación",
+    "NameNormalized": "comunicacion",
+    "Active": true
+  },
+  {
+    "Id": 5,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa5",
+    "Name": "Logística",
+    "NameNormalized": "logistica",
+    "Active": true
+  },
+  {
+    "Id": 6,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa6",
+    "Name": "Facilitación",
+    "NameNormalized": "facilitacion",
+    "Active": true
+  },
+  {
+    "Id": 7,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa7",
+    "Name": "Datos",
+    "NameNormalized": "datos",
+    "Active": true
+  },
+  {
+    "Id": 8,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa8",
+    "Name": "Sostenibilidad",
+    "NameNormalized": "sostenibilidad",
+    "Active": true
+  },
+  {
+    "Id": 9,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa9",
+    "Name": "Organización",
+    "NameNormalized": "organizacion",
+    "Active": true
+  },
+  {
+    "Id": 10,
+    "PublicId": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaa10",
+    "Name": "Recursos humanos",
+    "NameNormalized": "recursos humanos",
+    "Active": true
+  }
+]

@@ -1,0 +1,119 @@
+[
+  {
+    "Id": 1,
+    "PublicId": "40000000-0000-4000-8000-000000000001",
+    "MembershipId": 1,
+    "Type": "joined",
+    "OccurredAt": "2026-10-20T14:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 2,
+    "PublicId": "40000000-0000-4000-8000-000000000002",
+    "MembershipId": 2,
+    "Type": "joined",
+    "OccurredAt": "2026-10-20T15:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 3,
+    "PublicId": "40000000-0000-4000-8000-000000000003",
+    "MembershipId": 3,
+    "Type": "joined",
+    "OccurredAt": "2026-10-20T16:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 4,
+    "PublicId": "40000000-0000-4000-8000-000000000004",
+    "MembershipId": 4,
+    "Type": "joined",
+    "OccurredAt": "2026-10-21T14:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 5,
+    "PublicId": "40000000-0000-4000-8000-000000000005",
+    "MembershipId": 5,
+    "Type": "joined",
+    "OccurredAt": "2026-10-21T15:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 6,
+    "PublicId": "40000000-0000-4000-8000-000000000006",
+    "MembershipId": 6,
+    "Type": "joined",
+    "OccurredAt": "2026-10-22T14:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 7,
+    "PublicId": "40000000-0000-4000-8000-000000000007",
+    "MembershipId": 7,
+    "Type": "joined",
+    "OccurredAt": "2026-10-22T15:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 8,
+    "PublicId": "40000000-0000-4000-8000-000000000008",
+    "MembershipId": 8,
+    "Type": "joined",
+    "OccurredAt": "2026-10-23T14:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 9,
+    "PublicId": "40000000-0000-4000-8000-000000000009",
+    "MembershipId": 9,
+    "Type": "joined",
+    "OccurredAt": "2026-10-22T10:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": 1
+  },
+  {
+    "Id": 10,
+    "PublicId": "40000000-0000-4000-8000-000000000010",
+    "MembershipId": 10,
+    "Type": "joined",
+    "OccurredAt": "2026-10-24T10:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 11,
+    "PublicId": "40000000-0000-4000-8000-000000000011",
+    "MembershipId": 11,
+    "Type": "joined",
+    "OccurredAt": "2026-10-26T11:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": 5
+  },
+  {
+    "Id": 12,
+    "PublicId": "40000000-0000-4000-8000-000000000012",
+    "MembershipId": 12,
+    "Type": "joined",
+    "OccurredAt": "2026-10-24T12:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  },
+  {
+    "Id": 13,
+    "PublicId": "40000000-0000-4000-8000-000000000013",
+    "MembershipId": 12,
+    "Type": "retired",
+    "OccurredAt": "2026-10-27T12:00:00.000Z",
+    "ActorId": 1,
+    "RequestId": null
+  }
+]

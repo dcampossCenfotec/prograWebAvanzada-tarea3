@@ -1,0 +1,44 @@
+[
+  {
+    "UserId": 1,
+    "SkillId": 2,
+    "Level": "advanced",
+    "Position": 0
+  },
+  {
+    "UserId": 1,
+    "SkillId": 6,
+    "Level": "intermediate",
+    "Position": 1
+  },
+  {
+    "UserId": 2,
+    "SkillId": 3,
+    "Level": "intermediate",
+    "Position": 0
+  },
+  {
+    "UserId": 2,
+    "SkillId": 4,
+    "Level": "advanced",
+    "Position": 1
+  },
+  {
+    "UserId": 3,
+    "SkillId": 3,
+    "Level": "advanced",
+    "Position": 0
+  },
+  {
+    "UserId": 5,
+    "SkillId": 5,
+    "Level": "advanced",
+    "Position": 0
+  },
+  {
+    "UserId": 5,
+    "SkillId": 9,
+    "Level": "advanced",
+    "Position": 1
+  }
+]

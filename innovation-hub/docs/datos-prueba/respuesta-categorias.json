@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": "culture-creativity",
+      "name": "Cultura y creatividad"
+    },
+    {
+      "id": "education",
+      "name": "Educación"
+    },
+    {
+      "id": "social-impact",
+      "name": "Impacto social"
+    },
+    {
+      "id": "business",
+      "name": "Negocios y emprendimiento"
+    },
+    {
+      "id": "other",
+      "name": "Otro"
+    },
+    {
+      "id": "health",
+      "name": "Salud y bienestar"
+    },
+    {
+      "id": "sustainability",
+      "name": "Sostenibilidad"
+    },
+    {
+      "id": "technology",
+      "name": "Tecnología"
+    }
+  ]
+}
