@@ -1,0 +1,10 @@
+@api = http://localhost:5080/api
+
+### 1. Miembros → 200
+GET {{api}}/miembros
+
+### 2. Series → 200
+GET {{api}}/series
+
+### 3. Ruta inexistente → 404 sin cuerpo
+GET {{api}}/plataformas
