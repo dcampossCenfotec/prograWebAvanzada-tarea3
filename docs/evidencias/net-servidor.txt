@@ -1,0 +1,23 @@
+Using launch settings from /Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net/Properties/launchSettings.json...
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5080
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (55ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CONVERT(varchar(11), [m].[Id]) AS [_id], [m].[Nombre] AS [nombre]
+      FROM [Miembros] AS [m]
+      ORDER BY [m].[Nombre]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT CONVERT(varchar(11), [s].[Id]) AS [_id], [s].[Titulo] AS [titulo], [g].[Nombre] AS [genero], [s].[Temporadas] AS [temporadas], [s].[Estado] AS [estado], CONVERT(varchar(11), [s].[MiembroId]) AS [miembroId], [m].[Nombre] AS [miembro]
+      FROM [Series] AS [s]
+      INNER JOIN [Generos] AS [g] ON [s].[GeneroId] = [g].[Id]
+      INNER JOIN [Miembros] AS [m] ON [s].[MiembroId] = [m].[Id]
+      ORDER BY [s].[Id]
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

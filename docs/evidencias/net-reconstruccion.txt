@@ -1,0 +1,67 @@
+Construcción 1
+
+Changed database context to 'master'.
+Changed database context to 'MaratonReconstruccion_1794941142'.
+
+(5 rows affected)
+
+(4 rows affected)
+
+(5 rows affected)
+
+(1 rows affected)
+
+(6 rows affected)
+
+(1 rows affected)
+Series
+------
+5
+
+(1 rows affected)
+Favoritos
+---------
+6
+
+(1 rows affected)
+Migraciones
+-----------
+2
+
+(1 rows affected)
+
+Changed database context to 'master'.
+
+Construcción 2
+
+Changed database context to 'master'.
+Changed database context to 'MaratonReconstruccion_1794941142'.
+
+(5 rows affected)
+
+(4 rows affected)
+
+(5 rows affected)
+
+(1 rows affected)
+
+(6 rows affected)
+
+(1 rows affected)
+Series
+------
+5
+
+(1 rows affected)
+Favoritos
+---------
+6
+
+(1 rows affected)
+Migraciones
+-----------
+2
+
+(1 rows affected)
+
+Changed database context to 'master'.

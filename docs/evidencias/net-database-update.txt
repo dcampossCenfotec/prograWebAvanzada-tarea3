@@ -1,0 +1,168 @@
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (844ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      CREATE DATABASE [Maraton];
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (332ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      IF SERVERPROPERTY('EngineEdition') <> 5
+      BEGIN
+          ALTER DATABASE [Maraton] SET READ_COMMITTED_SNAPSHOT ON;
+      END;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Migrations[20411]
+      Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (73ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DECLARE @result int;
+      EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+      SELECT @result
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+      BEGIN
+          CREATE TABLE [__EFMigrationsHistory] (
+              [MigrationId] nvarchar(150) NOT NULL,
+              [ProductVersion] nvarchar(32) NOT NULL,
+              CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+          );
+      END;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: Microsoft.EntityFrameworkCore.Migrations[20402]
+      Applying migration '20261117182530_Inicial'.
+Applying migration '20261117182530_Inicial'.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Generos] (
+          [Id] int NOT NULL IDENTITY,
+          [Nombre] nvarchar(30) NOT NULL,
+          CONSTRAINT [PK_Generos] PRIMARY KEY ([Id])
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Miembros] (
+          [Id] int NOT NULL IDENTITY,
+          [Nombre] nvarchar(50) NOT NULL,
+          [Correo] nvarchar(100) NOT NULL,
+          [Registro] date NOT NULL,
+          CONSTRAINT [PK_Miembros] PRIMARY KEY ([Id])
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Series] (
+          [Id] int NOT NULL IDENTITY,
+          [Titulo] nvarchar(100) NOT NULL,
+          [Temporadas] int NOT NULL,
+          [Estado] nvarchar(10) NOT NULL,
+          [GeneroId] int NOT NULL,
+          [MiembroId] int NOT NULL,
+          CONSTRAINT [PK_Series] PRIMARY KEY ([Id]),
+          CONSTRAINT [CK_Series_Estado] CHECK ([Estado] IN (N'Por ver', N'Viendo', N'Vista')),
+          CONSTRAINT [CK_Series_Temporadas] CHECK ([Temporadas] BETWEEN 1 AND 30),
+          CONSTRAINT [FK_Series_Generos_GeneroId] FOREIGN KEY ([GeneroId]) REFERENCES [Generos] ([Id]) ON DELETE NO ACTION,
+          CONSTRAINT [FK_Series_Miembros_MiembroId] FOREIGN KEY ([MiembroId]) REFERENCES [Miembros] ([Id]) ON DELETE NO ACTION
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (142ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nombre') AND [object_id] = OBJECT_ID(N'[Generos]'))
+          SET IDENTITY_INSERT [Generos] ON;
+      INSERT INTO [Generos] ([Id], [Nombre])
+      VALUES (1, N'Drama'),
+      (2, N'Comedia'),
+      (3, N'Ciencia ficción'),
+      (4, N'Animación'),
+      (5, N'Documental');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nombre') AND [object_id] = OBJECT_ID(N'[Generos]'))
+          SET IDENTITY_INSERT [Generos] OFF;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Correo', N'Nombre', N'Registro') AND [object_id] = OBJECT_ID(N'[Miembros]'))
+          SET IDENTITY_INSERT [Miembros] ON;
+      INSERT INTO [Miembros] ([Id], [Correo], [Nombre], [Registro])
+      VALUES (1, N'ana@club.com', N'Ana', '2026-08-01'),
+      (2, N'luis@club.com', N'Luis', '2026-08-03'),
+      (3, N'sofia@club.com', N'Sofía', '2026-08-10'),
+      (4, N'diego@club.com', N'Diego', '2026-09-02');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Correo', N'Nombre', N'Registro') AND [object_id] = OBJECT_ID(N'[Miembros]'))
+          SET IDENTITY_INSERT [Miembros] OFF;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Estado', N'GeneroId', N'MiembroId', N'Temporadas', N'Titulo') AND [object_id] = OBJECT_ID(N'[Series]'))
+          SET IDENTITY_INSERT [Series] ON;
+      INSERT INTO [Series] ([Id], [Estado], [GeneroId], [MiembroId], [Temporadas], [Titulo])
+      VALUES (1, N'Vista', 3, 1, 3, N'Dark'),
+      (2, N'Viendo', 2, 2, 9, N'The Office'),
+      (3, N'Por ver', 4, 3, 2, N'Arcane'),
+      (4, N'Vista', 1, 4, 1, N'Chernobyl'),
+      (5, N'Por ver', 5, 1, 3, N'Planeta Tierra');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Estado', N'GeneroId', N'MiembroId', N'Temporadas', N'Titulo') AND [object_id] = OBJECT_ID(N'[Series]'))
+          SET IDENTITY_INSERT [Series] OFF;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [IX_Generos_Nombre] ON [Generos] ([Nombre]);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [IX_Miembros_Correo] ON [Miembros] ([Correo]);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Series_GeneroId] ON [Series] ([GeneroId]);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Series_MiembroId] ON [Series] ([MiembroId]);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20261117182530_Inicial', N'10.0.14');
+info: Microsoft.EntityFrameworkCore.Migrations[20402]
+      Applying migration '20261117184058_GenerosFavoritos'.
+Applying migration '20261117184058_GenerosFavoritos'.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [MiembroGeneros] (
+          [MiembroId] int NOT NULL,
+          [GeneroId] int NOT NULL,
+          CONSTRAINT [PK_MiembroGeneros] PRIMARY KEY ([MiembroId], [GeneroId]),
+          CONSTRAINT [FK_MiembroGeneros_Generos_GeneroId] FOREIGN KEY ([GeneroId]) REFERENCES [Generos] ([Id]) ON DELETE CASCADE,
+          CONSTRAINT [FK_MiembroGeneros_Miembros_MiembroId] FOREIGN KEY ([MiembroId]) REFERENCES [Miembros] ([Id]) ON DELETE CASCADE
+      );
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'GeneroId', N'MiembroId') AND [object_id] = OBJECT_ID(N'[MiembroGeneros]'))
+          SET IDENTITY_INSERT [MiembroGeneros] ON;
+      INSERT INTO [MiembroGeneros] ([GeneroId], [MiembroId])
+      VALUES (3, 1),
+      (5, 1),
+      (2, 2),
+      (1, 3),
+      (4, 3),
+      (1, 4);
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'GeneroId', N'MiembroId') AND [object_id] = OBJECT_ID(N'[MiembroGeneros]'))
+          SET IDENTITY_INSERT [MiembroGeneros] OFF;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_MiembroGeneros_GeneroId] ON [MiembroGeneros] ([GeneroId]);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20261117184058_GenerosFavoritos', N'10.0.14');
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DECLARE @result int;
+      EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+      SELECT @result
+Done.
+/Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net/MaratonApi.csproj : warning NU1902: Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-2fmv-rv2c-59x7
+/Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net/MaratonApi.csproj : warning NU1903: Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-846f-f764-76mx
+/Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net/MaratonApi.csproj : warning NU1902: Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-2fmv-rv2c-59x7
+/Users/danielcampos/Documents/Universidad/Progra Web Avanzada/proyectos/maraton-series/servidor-net/MaratonApi.csproj : warning NU1903: Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-846f-f764-76mx

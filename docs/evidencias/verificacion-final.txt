@@ -1,0 +1,15 @@
+Verificación final - 22 de noviembre de 2026
+
+React: npm ci --offline y npm run build aprobados en cliente del Maratón,
+mi-primera-app, pura-vida-react y conceptos-interactivos.
+API Express: npm test contra MongoDB local en base temporal exclusiva:
+8 pruebas aprobadas, 0 fallidas; la base temporal se eliminó al finalizar.
+.NET Maratón: dotnet build aprobado, 0 errores. Advertencia NU1900:
+NuGet no pudo consultar el servicio de datos de vulnerabilidades.
+
+Parte B: 14 tablas, 107 filas; referencias y claves coherentes; seis pasos de
+migración; seis sentencias SQL con resultados esperados; JSON del catálogo
+y del detalle coherentes con los datos; detalle con relación M:N.
+20 secciones de laboratorios con capturas, recorrido y reflexiones.
+31 capturas. Investigación PDF de dos páginas.
+No se ejecutaron escrituras en Atlas ni se modificó Innovation Hub real.

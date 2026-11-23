@@ -1,0 +1,80 @@
+Changed database context to 'Maraton'.
+TABLE_NAME
+----------
+__EFMigrationsHistory
+Generos
+MiembroGeneros
+Miembros
+Series
+
+(5 rows affected)
+MigrationId|ProductVersion
+-----------|--------------
+20261117182530_Inicial|10.0.14
+20261117184058_GenerosFavoritos|10.0.14
+
+(2 rows affected)
+Id|Titulo|Genero|Estado|Miembro
+--|------|------|------|-------
+1|Dark|Ciencia ficción|Vista|Ana
+2|The Office|Comedia|Viendo|Luis
+3|Arcane|Animación|Por ver|Sofía
+4|Chernobyl|Drama|Vista|Diego
+5|Planeta Tierra|Documental|Por ver|Ana
+
+(5 rows affected)
+Titulo
+------
+Dark
+Planeta Tierra
+
+(2 rows affected)
+Estado|Cantidad
+------|--------
+Por ver|2
+Viendo|1
+Vista|2
+
+(3 rows affected)
+Miembro|Genero
+-------|------
+Ana|Ciencia ficción
+Ana|Documental
+Diego|Drama
+Luis|Comedia
+Sofía|Animación
+Sofía|Drama
+
+(6 rows affected)
+E1
+
+(0 rows affected)
+Numero|Mensaje
+------|-------
+547|The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Series_Miembros_MiembroId". The conflict occurred in database "Maraton", table "dbo.Miembros", column 'Id'.
+
+(1 rows affected)
+E2
+
+(0 rows affected)
+Numero|Mensaje
+------|-------
+2601|Cannot insert duplicate key row in object 'dbo.Miembros' with unique index 'IX_Miembros_Correo'. The duplicate key value is (ana@club.com).
+
+(1 rows affected)
+E3
+
+(0 rows affected)
+Numero|Mensaje
+------|-------
+547|The INSERT statement conflicted with the CHECK constraint "CK_Series_Estado". The conflict occurred in database "Maraton", table "dbo.Series", column 'Estado'.
+
+(1 rows affected)
+E4
+
+(0 rows affected)
+Numero|Mensaje
+------|-------
+547|The DELETE statement conflicted with the REFERENCE constraint "FK_Series_Miembros_MiembroId". The conflict occurred in database "Maraton", table "dbo.Series", column 'MiembroId'.
+
+(1 rows affected)

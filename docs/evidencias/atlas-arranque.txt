@@ -1,0 +1,4 @@
+npm notice run servidor@1.0.0 start
+npm notice run node --env-file=.env src/index.js
+Conectado a MongoDB: maraton
+API escuchando en http://localhost:3000

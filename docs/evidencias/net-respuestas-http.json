@@ -1,0 +1,80 @@
+[
+  {
+    "ruta": "/api/miembros",
+    "estado": 200,
+    "cuerpo": [
+      {
+        "_id": "1",
+        "nombre": "Ana"
+      },
+      {
+        "_id": "4",
+        "nombre": "Diego"
+      },
+      {
+        "_id": "2",
+        "nombre": "Luis"
+      },
+      {
+        "_id": "3",
+        "nombre": "Sofía"
+      }
+    ]
+  },
+  {
+    "ruta": "/api/series",
+    "estado": 200,
+    "cuerpo": [
+      {
+        "_id": "1",
+        "titulo": "Dark",
+        "genero": "Ciencia ficción",
+        "temporadas": 3,
+        "estado": "Vista",
+        "miembroId": "1",
+        "miembro": "Ana"
+      },
+      {
+        "_id": "2",
+        "titulo": "The Office",
+        "genero": "Comedia",
+        "temporadas": 9,
+        "estado": "Viendo",
+        "miembroId": "2",
+        "miembro": "Luis"
+      },
+      {
+        "_id": "3",
+        "titulo": "Arcane",
+        "genero": "Animación",
+        "temporadas": 2,
+        "estado": "Por ver",
+        "miembroId": "3",
+        "miembro": "Sofía"
+      },
+      {
+        "_id": "4",
+        "titulo": "Chernobyl",
+        "genero": "Drama",
+        "temporadas": 1,
+        "estado": "Vista",
+        "miembroId": "4",
+        "miembro": "Diego"
+      },
+      {
+        "_id": "5",
+        "titulo": "Planeta Tierra",
+        "genero": "Documental",
+        "temporadas": 3,
+        "estado": "Por ver",
+        "miembroId": "1",
+        "miembro": "Ana"
+      }
+    ]
+  },
+  {
+    "ruta": "/api/plataformas",
+    "estado": 404,
+    "cuerpo": null
+  }
+]
