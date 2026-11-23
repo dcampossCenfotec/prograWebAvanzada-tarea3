@@ -1,0 +1,55 @@
+/* Variables de color de la marca. */
+:root {
+  --verde-principal: #00695c;
+  --verde-claro: #43a047;
+}
+
+.bg-verde {
+  background-color: var(--verde-principal);
+}
+
+/* Evita que la navegación fija tape los destinos de los enlaces. */
+header[id], section[id], footer[id] {
+  scroll-margin-top: 5rem;
+}
+
+.hero {
+  min-height: 70vh;
+  background-color: var(--verde-principal);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("https://picsum.photos/seed/costarica/1600/900");
+  background-size: cover;
+  background-position: center;
+}
+
+.card-tour {
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-tour:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-tour img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.precio {
+  color: var(--verde-claro);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-tour {
+    transition: none;
+  }
+
+  .card-tour:hover {
+    transform: none;
+  }
+}
