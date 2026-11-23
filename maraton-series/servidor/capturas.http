@@ -1,0 +1,20 @@
+# Peticiones auxiliares para las capturas. No contienen credenciales.
+@api = http://localhost:3000/api
+
+### Datos inválidos → 400 con cuatro detalles
+POST {{api}}/series
+Content-Type: application/json
+
+{"titulo":"A","genero":"Terror","temporadas":"2","miembroId":"abc"}
+
+### Serie inexistente → 404
+PATCH {{api}}/series/650000000000000000000000/estado
+Content-Type: application/json
+
+{"estado":"Vista"}
+
+### ID mal formado → 400
+GET {{api}}/series/abc
+
+### Lista real con las series guardadas
+GET {{api}}/series
